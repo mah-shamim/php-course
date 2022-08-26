@@ -33,6 +33,17 @@
         $taxRate=0.0825;
         $addedTax= $amount*$taxRate;  //amount = 800, tax = .0825
         echo $addedTax;
+
+        echo '<br>';
+        echo tax_calc(750,0.223); // When you refresh your page you should the value 917.25 at the bottom of the screen.
     ?>
   </body>
 </html>
+
+<?php
+  function tax_calc($amount,$tax){
+    $calculate_tax = $amount*$tax;
+    $amount = round($amount+$calculate_tax,2);
+    return $amount;
+}
+?>
